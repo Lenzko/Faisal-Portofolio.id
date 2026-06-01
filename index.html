@@ -1,398 +1,3 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>GO Indonesia - TOEFL</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Inter',sans-serif;
-}
-
-body{
-    background:#F6F3EB;
-    overflow-x:hidden;
-}
-
-/* NAVBAR */
-header{
-    width:100%;
-    height:82px;
-    background:#fff;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    box-shadow:0 1px 8px rgba(0,0,0,.05);
-    position:sticky;
-    top:0;
-    z-index:999;
-}
-
-.navbar{
-    width:1400px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-}
-
-.logo{
-    display:flex;
-    align-items:center;
-    gap:14px;
-}
-
-.logo-icon{
-    width:50px;
-    height:50px;
-    border-radius:50%;
-    background:linear-gradient(
-        135deg,
-        #f9e796,
-        #dca11c,
-        #fff4c4
-    );
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color:#fff;
-    font-size:32px;
-    font-weight:800;
-}
-
-.logo span{
-    font-size:22px;
-    font-weight:700;
-    color:#d89d1d;
-}
-
-.menu{
-    display:flex;
-    gap:45px;
-}
-
-.menu a{
-    text-decoration:none;
-    color:#555;
-    font-size:18px;
-    font-weight:500;
-}
-
-.menu a:hover{
-    color:#d89d1d;
-}
-
-.nav-btn{
-    display:flex;
-    gap:16px;
-}
-
-.btn-login{
-    width:110px;
-    height:52px;
-    border-radius:40px;
-    background:#fff;
-    border:2px solid #e6b43d;
-    color:#d89d1d;
-    font-size:16px;
-    font-weight:600;
-    cursor:pointer;
-}
-
-.btn-register{
-    width:110px;
-    height:52px;
-    border:none;
-    border-radius:40px;
-    background:#efb32e;
-    color:white;
-    font-size:16px;
-    font-weight:700;
-    cursor:pointer;
-}
-
-/* HERO */
-.hero{
-    width:100%;
-    min-height:calc(100vh - 82px);
-    display:flex;
-    justify-content:center;
-    align-items:center;
-}
-
-.hero-container{
-    width:1400px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:50px;
-}
-
-/* LEFT */
-.hero-left{
-    width:650px;
-}
-
-.hero-left h1{
-    font-size:70px;
-    line-height:1.15;
-    font-weight:800;
-    color:#171717;
-}
-
-.highlight{
-    color:#efb32e;
-}
-
-.hero-left p{
-    margin-top:25px;
-    font-size:22px;
-    line-height:1.7;
-    color:#57616f;
-    max-width:700px;
-}
-
-.features{
-    display:flex;
-    gap:40px;
-    margin-top:35px;
-    flex-wrap:wrap;
-}
-
-.feature{
-    display:flex;
-    align-items:center;
-    gap:12px;
-    font-size:18px;
-    color:#000;
-    font-weight:500;
-}
-
-.check{
-    width:24px;
-    height:24px;
-    border-radius:50%;
-    background:#efb32e;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    color:white;
-    font-size:14px;
-}
-
-.hero-buttons{
-    margin-top:50px;
-    display:flex;
-    gap:20px;
-}
-
-.btn-primary{
-    width:180px;
-    height:66px;
-    border:none;
-    border-radius:45px;
-    background:#efb32e;
-    color:white;
-    font-size:28px;
-    font-weight:700;
-    cursor:pointer;
-    box-shadow:0 8px 20px rgba(239,179,46,.3);
-}
-
-.btn-secondary{
-    width:180px;
-    height:66px;
-    border-radius:45px;
-    background:white;
-    border:2px solid #e2e2e2;
-    font-size:28px;
-    font-weight:600;
-    cursor:pointer;
-}
-
-/* RIGHT */
-.hero-right{
-    width:600px;
-    display:flex;
-    justify-content:center;
-}
-
-.circle{
-    width:500px;
-    height:500px;
-    border-radius:50%;
-    background:#f3edd8;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    position:relative;
-}
-
-.certificate{
-    width:190px;
-    height:170px;
-    border:4px solid #efb32e;
-    border-radius:25px;
-    background:white;
-    position:relative;
-}
-
-.line{
-    height:4px;
-    background:#efb32e;
-    margin-left:25px;
-    border-radius:10px;
-}
-
-.line1{
-    width:110px;
-    margin-top:55px;
-}
-
-.line2{
-    width:70px;
-    margin-top:30px;
-}
-
-.line3{
-    width:110px;
-    margin-top:30px;
-}
-
-.qr-circle{
-    width:75px;
-    height:75px;
-    border-radius:50%;
-    border:4px solid #efb32e;
-    background:#f8f8f8;
-    position:absolute;
-    right:-20px;
-    bottom:-20px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-}
-
-.plus{
-    font-size:60px;
-    color:#efb32e;
-    font-weight:300;
-}
-
-.qr-text{
-    position:absolute;
-    bottom:-28px;
-    font-size:16px;
-    color:#efb32e;
-}
-
-/* BOTTOM WARNING */
-.warning{
-    position:fixed;
-    left:10px;
-    bottom:10px;
-    background:#f7a928;
-    color:white;
-    padding:10px 18px;
-    border-radius:6px;
-    font-size:14px;
-    box-shadow:0 5px 15px rgba(0,0,0,.1);
-}
-
-@media(max-width:1200px){
-
-.hero-container{
-    width:90%;
-    flex-direction:column;
-    text-align:center;
-    padding:60px 0;
-}
-
-.hero-left{
-    width:100%;
-}
-
-.hero-left h1{
-    font-size:50px;
-}
-
-.features{
-    justify-content:center;
-}
-
-.hero-buttons{
-    justify-content:center;
-}
-
-.hero-right{
-    width:100%;
-}
-
-.circle{
-    width:380px;
-    height:380px;
-}
-}
-
-@media(max-width:768px){
-
-.menu{
-    display:none;
-}
-
-.hero-left h1{
-    font-size:38px;
-}
-
-.hero-left p{
-    font-size:18px;
-}
-
-.circle{
-    width:300px;
-    height:300px;
-}
-
-.btn-primary,
-.btn-secondary{
-    width:150px;
-    height:55px;
-    font-size:20px;
-}
-}
-</style>
-</head>
-<body>
-
-<header>
-<div class="navbar">
-
-<div class="logo">
-<div class="logo-icon">G</div>
-<span>GO Indonesia</span>
-</div>
-
-<nav class="menu">
-<a href="#">Beranda</a>
-<a href="#">Tes TOEFL</a>
-<a href="#">Tutorial</a>
-<a href="#">Kontak</a>
-</nav>
-
-<div class="nav-btn">
-<button class="btn-login">Masuk</button>
-<button class="btn-register">Daftar</button>
-</div>
-
-</div>
-</header>
-
 <section class="hero">
 
 <div class="hero-container">
@@ -400,41 +5,46 @@ header{
 <div class="hero-left">
 
 <h1>
-Platform Tes TOEFL
+Data Administration
 <br>
-<span class="highlight">Profesional & Modern</span>
+<span class="highlight">Specialist & Web Developer</span>
 <br>
-dengan Sertifikat Digital
+Transforming Data Into Valuable Information
 </h1>
 
 <p>
-Global Operation Indonesia menghadirkan platform tes TOEFL modern
-dengan sistem sertifikat digital ber-QR Code untuk verifikasi
-keaslian.
+Membantu pengelolaan data, reporting, administrasi digital,
+dan pengembangan sistem informasi secara terstruktur,
+efisien, serta profesional.
 </p>
 
 <div class="features">
 
 <div class="feature">
 <div class="check">✓</div>
-Akses Selamanya
+Data Management
 </div>
 
 <div class="feature">
 <div class="check">✓</div>
-Sertifikat QR Code
+Web Development
 </div>
 
 <div class="feature">
 <div class="check">✓</div>
-Hasil Cepat
+Data Analysis
 </div>
 
 </div>
 
 <div class="hero-buttons">
-<button class="btn-primary">Mulai Tes</button>
-<button class="btn-secondary">Pelajari</button>
+<button class="btn-primary">Tentang Saya</button>
+<button class="btn-secondary">Keahlian</button>
+</div>
+
+<div class="hero-buttons" style="margin-top:20px;">
+<button class="btn-secondary">Proyek</button>
+<button class="btn-secondary">Kontak</button>
 </div>
 
 </div>
@@ -451,7 +61,7 @@ Hasil Cepat
 
 <div class="qr-circle">
 <div class="plus">+</div>
-<div class="qr-text">QR Code</div>
+<div class="qr-text">Portfolio</div>
 </div>
 
 </div>
@@ -463,10 +73,3 @@ Hasil Cepat
 </div>
 
 </section>
-
-<div class="warning">
-⚠ Gunakan bahasa Indonesia asli untuk pengalaman terbaik. Terjemahan otomatis dapat mengganggu tampilan.
-</div>
-
-</body>
-</html>
