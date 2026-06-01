@@ -10,7 +10,11 @@
 
 <style>
 /* ================= SLIDER ================= */
-
+.page{
+    max-width:1400px;
+    margin:auto;
+    overflow:hidden;
+}
 .slider{
     position:relative;
     width:100%;
@@ -53,11 +57,8 @@
 
 .preview.left{
     transform:
-        translate(-145%,-50%)
+        translate(-135%,-50%)
         scale(.82);
-
-    opacity:.35;
-    z-index:1;
 }
 
 /* TENGAH */
@@ -78,11 +79,8 @@
 
 .preview.right{
     transform:
-        translate(45%,-50%)
+        translate(35%,-50%)
         scale(.82);
-
-    opacity:.35;
-    z-index:1;
 }
     @media(max-width:768px){
 
@@ -284,43 +282,6 @@ header{
     color:#EFB32E;
 }
 
-/* ================= SLIDER ================= */
-
-.slider{
-    height:500px;
-    margin-top:60px;
-}
-
-.slide-track{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:30px;
-}
-
-.preview{
-    width:420px;
-    height:280px;
-    border-radius:25px;
-    overflow:hidden;
-
-    opacity:.4;
-    transform:scale(.85);
-
-    transition:.8s ease;
-}
-
-.preview img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-}
-
-.preview.active{
-    opacity:1;
-    transform:scale(1.15);
-}
-
 /* ================= CERTIFICATE LIST ================= */
 
 .certificates{
@@ -444,18 +405,17 @@ Sertifikat <span>Saya</span>
 
     <div class="slide-track">
 
-        <div class="preview">
-            <img src="s1.jpg">
-        </div>
+<div class="preview left">
+    <img src="s1.jpg">
+</div>
 
-        <div class="preview active">
-            <img src="s2.jpg">
-        </div>
+<div class="preview active">
+    <img src="s2.jpg">
+</div>
 
-        <div class="preview">
-            <img src="s3.jpg">
-        </div>
-
+<div class="preview right">
+    <img src="s3.jpg">
+</div>
     </div>
 
 </div>
