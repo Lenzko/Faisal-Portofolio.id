@@ -304,36 +304,8 @@ header{
 }
 
 }
-
-@media(max-width:768px){
-
-.container{
-    padding:0 25px;
-}
-
-.title{
-    font-size:42px;
-}
-
-.about-text{
-    font-size:17px;
-}
-
-.education-title{
-    font-size:34px;
-}
-
-.profile-img{
-    width:260px;
-}
-
-.circle{
-    width:260px;
-    height:260px;
-}
-
-.card-info{
-    display:none;
+.logo-text{
+    font-size:20px;
 }
 /* MENU */
 
@@ -407,10 +379,14 @@ header{
 .menu-btn.active span:nth-child(3){
     transform:translateY(-9px) rotate(-45deg);
 }
-.logo-text{
-    font-size:20px;
+    .menu-dropdown{
+    position:relative;
+    z-index:3000;
 }
 
+.dropdown-content{
+    z-index:3001;
+}
 }
 
 </style>
