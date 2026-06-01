@@ -34,19 +34,19 @@ header{
     left:0;
     width:100%;
     height:85px;
-    background:#ffffff;
+    background:#fff;
     box-shadow:0 2px 15px rgba(0,0,0,.05);
     z-index:1000;
 }
 
 .navbar{
     max-width:1400px;
-    margin:auto;
     height:100%;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
+    margin:auto;
     padding:0 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 }
 
 .logo{
@@ -59,7 +59,12 @@ header{
     width:52px;
     height:52px;
     border-radius:50%;
-    background:linear-gradient(135deg,#f9e38c,#d79b16,#fff4c0);
+    background:linear-gradient(
+        135deg,
+        #f9e38c,
+        #d79b16,
+        #fff4c0
+    );
     display:flex;
     justify-content:center;
     align-items:center;
@@ -74,48 +79,70 @@ header{
     color:#D89E1D;
 }
 
-.menu{
-    display:flex;
-    gap:45px;
+/* ================= MENU ================= */
+
+.menu-dropdown{
+    position:relative;
 }
 
-.menu a{
+.menu-btn{
+    width:50px;
+    height:50px;
+    border:none;
+    border-radius:50%;
+    background:white;
+    color:#D89E1D;
+    font-size:34px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.menu-btn:hover{
+    background:#f6f1e4;
+}
+
+.dropdown-content{
+    position:absolute;
+    right:0;
+    top:60px;
+    min-width:240px;
+    background:white;
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 20px 50px rgba(0,0,0,.12);
+    display:none;
+}
+
+.dropdown-content.show{
+    display:block;
+    animation:fadeDown .3s ease;
+}
+
+.dropdown-content a{
+    display:block;
+    padding:15px 20px;
     text-decoration:none;
-    color:#555;
-    font-size:18px;
+    color:#444;
     font-weight:500;
     transition:.3s;
 }
 
-.menu a:hover{
+.dropdown-content a:hover{
+    background:#F8F5ED;
     color:#D89E1D;
 }
 
-.nav-buttons{
-    display:flex;
-    gap:15px;
-}
+@keyframes fadeDown{
 
-.btn-outline{
-    width:120px;
-    height:48px;
-    border-radius:50px;
-    border:2px solid #E3AF31;
-    background:white;
-    color:#D89E1D;
-    font-weight:600;
-    cursor:pointer;
-}
+    from{
+        opacity:0;
+        transform:translateY(-10px);
+    }
 
-.btn-fill{
-    width:120px;
-    height:48px;
-    border-radius:50px;
-    border:none;
-    background:#EFB32E;
-    color:white;
-    font-weight:700;
-    cursor:pointer;
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
 }
 
 /* ================= HERO ================= */
@@ -125,7 +152,7 @@ header{
     display:flex;
     align-items:center;
     justify-content:center;
-    padding-top:85px;
+    padding-top:90px;
 }
 
 .hero-container{
@@ -166,8 +193,8 @@ header{
 .features{
     margin-top:35px;
     display:flex;
-    gap:30px;
     flex-wrap:wrap;
+    gap:25px;
 }
 
 .feature{
@@ -192,8 +219,8 @@ header{
 .action-buttons{
     margin-top:45px;
     display:flex;
-    gap:15px;
     flex-wrap:wrap;
+    gap:15px;
 }
 
 .main-btn{
@@ -222,6 +249,12 @@ header{
     font-size:17px;
     font-weight:600;
     cursor:pointer;
+    transition:.3s;
+}
+
+.second-btn:hover{
+    border-color:#EFB32E;
+    color:#D89E1D;
 }
 
 /* ================= FOTO ================= */
@@ -262,8 +295,8 @@ header{
     border-radius:50px;
     font-size:14px;
     font-weight:600;
-    box-shadow:0 10px 25px rgba(0,0,0,.1);
     color:#D89E1D;
+    box-shadow:0 10px 25px rgba(0,0,0,.1);
 }
 
 /* ================= NOTICE ================= */
@@ -318,14 +351,6 @@ header{
     height:75px;
 }
 
-.menu{
-    display:none;
-}
-
-.nav-buttons{
-    display:none;
-}
-
 .navbar{
     padding:0 20px;
 }
@@ -365,6 +390,11 @@ header{
 .action-buttons{
     justify-content:center;
 }
+
+.notice{
+    font-size:12px;
+    padding:10px 14px;
+}
 }
 
 </style>
@@ -381,17 +411,23 @@ header{
 <div class="logo-text">Faisal Al Aziz</div>
 </div>
 
-<nav class="menu">
+<div class="menu-dropdown">
+
+<button class="menu-btn" onclick="toggleMenu()">
+⋮
+</button>
+
+<div class="dropdown-content" id="dropdownMenu">
+
 <a href="#">Beranda</a>
 <a href="#">Tentang Saya</a>
 <a href="#">Keahlian</a>
 <a href="#">Proyek</a>
 <a href="#">Kontak</a>
-</nav>
+<a href="#">CV Saya</a>
 
-<div class="nav-buttons">
-<button class="btn-outline">CV Saya</button>
-<button class="btn-fill">Kontak</button>
+</div>
+
 </div>
 
 </div>
@@ -438,11 +474,8 @@ Data Analysis & Reporting
 <div class="action-buttons">
 
 <button class="main-btn">Tentang Saya</button>
-
 <button class="second-btn">Keahlian</button>
-
 <button class="second-btn">Proyek</button>
-
 <button class="second-btn">Kontak</button>
 
 </div>
@@ -472,7 +505,33 @@ Available For Work
 <div class="notice">
 ⚠ Tampilan terbaik disarankan menggunakan laptop atau desktop.
 </div>
-<br></br>
-    
+
+<script>
+
+function toggleMenu(){
+
+    document
+        .getElementById("dropdownMenu")
+        .classList.toggle("show");
+
+}
+
+window.onclick = function(event){
+
+    if(!event.target.matches('.menu-btn')){
+
+        const dropdown =
+        document.getElementById("dropdownMenu");
+
+        if(dropdown.classList.contains("show")){
+            dropdown.classList.remove("show");
+        }
+
+    }
+
+}
+
+</script>
+
 </body>
 </html>
